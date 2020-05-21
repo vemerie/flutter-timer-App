@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:timer_app/widgets.dart';
 
 void main()=> runApp(MyApp());
 
@@ -12,6 +13,8 @@ class MyApp extends StatelessWidget{
     home: TimerHomePage(),
     );
   }
+  void emptyMethod() {}
+
 }
   
 class TimerHomePage extends StatelessWidget{
@@ -21,8 +24,29 @@ class TimerHomePage extends StatelessWidget{
     appBar:AppBar(
     title:Text("My work timer"),
       ),
-      body:Center(
-      child:Column(),),
+      body:Column(
+        children: <Widget>[
+          Row(children: <Widget>[
+            Padding(padding: EdgeInsets.all(8.0),),
+            Expanded(child:ProductivityButton(color:Color(0xff009688),
+            text: "Work",
+            onPressed: emptyMethod,
+            size: 23,
+            )),
+            
+            Padding(padding: EdgeInsets.all(8.0),),
+             Expanded(child: ProductivityButton(color: Color(0xff607D8B),
+             text: "Short Break", onPressed: emptyMethod,  size: 23,)),
+             Padding(padding: EdgeInsets.all(8.0),),
+             Expanded(child: ProductivityButton(color: Color(0xff455A64),
+             text: "Long Break", onPressed: emptyMethod,  size: 23,)),
+             Padding(padding: EdgeInsets.all(8.0),),
+            
+          ],)
+        ],
+      )
     );
   }
+    void emptyMethod() {}
+
 }
