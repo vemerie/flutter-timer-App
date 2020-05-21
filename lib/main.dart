@@ -9,15 +9,20 @@ class MyApp extends StatelessWidget{
     title:"My Work Timer",
       theme: ThemeData(
       primarySwatch:Colors.blueGrey),
-    home: Scaffold(
-    appBar:AppBar(
-    title:Text("MyWork Timer"),
-      ),
-      body:Center(
-      child:Text('My Work Timer'),
-        ),
-      ),
+    home: TimerHomePage(),
     );
   }
 }
- 
+  
+class TimerHomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+    appBar:AppBar(
+    title:Text("My work timer"),
+      ),
+      body:Center(
+      child:Column(),),
+    );
+  }
+}
