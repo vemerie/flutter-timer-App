@@ -32,6 +32,7 @@ class _SettingsState extends State<Settings> {
     TextEditingController txtWork = TextEditingController();
     TextEditingController txtShort = TextEditingController();
     TextEditingController txtLong = TextEditingController();
+    readSettings();
     super.initState();
   }
 
@@ -90,6 +91,7 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
+    double buttonSize;
     return Container(
       child: GridView.count(
         scrollDirection: Axis.vertical,
@@ -101,31 +103,27 @@ class _SettingsState extends State<Settings> {
           Text("Work", style: textStyle),
           Text(""),
           Text(""),
-          SettingsButton(Color(0xff455A64), "-", -1),
+          SettingsButton(
+              Color(0xff455A64), "-", buttonSize, -1, WORKTIME, updateSetting),
           TextField(
               controller: txtWork,
               style: textStyle,
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number),
           SettingsButton(
-            Color(0xff009688),
-            "+",
-            1,
-          ),
+              Color(0xff009688), "+", buttonSize, 1, WORKTIME, updateSetting),
           Text("Short", style: textStyle),
           Text(""),
           Text(""),
           SettingsButton(
-            Color(0xff455A64),
-            "-",
-            -1,
-          ),
+              Color(0xff455A64), "-", buttonSize, -1, WORKTIME, updateSetting),
           TextField(
               controller: txtShort,
               style: textStyle,
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number),
-          SettingsButton(Color(0xff009688), "+", 1),
+          SettingsButton(
+              Color(0xff009688), "+", buttonSize, 1, WORKTIME, updateSetting),
           Text(
             "Long",
             style: textStyle,
@@ -133,20 +131,14 @@ class _SettingsState extends State<Settings> {
           Text(""),
           Text(""),
           SettingsButton(
-            Color(0xff455A64),
-            "-",
-            -1,
-          ),
+              Color(0xff455A64), "-", buttonSize, -1, WORKTIME, updateSetting),
           TextField(
               controller: txtLong,
               style: textStyle,
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number),
           SettingsButton(
-            Color(0xff009688),
-            "+",
-            1,
-          ),
+              Color(0xff009688), "+", buttonSize, 1, WORKTIME, updateSetting),
         ],
         padding: const EdgeInsets.all(20.0),
       ),

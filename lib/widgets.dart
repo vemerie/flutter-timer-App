@@ -41,6 +41,7 @@ class SettingsButton extends StatelessWidget {
       ),
       onPressed: () => this.callback(this.setting, this.value),
       color: this.color,
+      minWidth: this.size,
     );
   }
 }
